@@ -70,21 +70,31 @@ class User:
             print(book + ": " + review)
 
 
+
 # ---------------------Book---------------------------
-class 
-
-
-
+# Stores all the Book's information 
+class Book: 
+    def __init__(self, title, author, ISBN = None, *genre) :
+        self.title = title
+        self.author = author
+        self.ISBN = ISBN
+        self.genre = genre
 
 # ------------------BookReview--------------------
 # Stores the total number of reviews 
 # Stores the list of people that gave the reviews 
-# Has the ability to post a review depending on the user 
-# Has the ability to remove a review 
-# 
+# Users can post a review
+# Users can remove a review 
+# Users can register 
+# Users can log in 
+# Users can view a review depending on a book
+# Can review each and every review  
+
 class BookReview:
-    def __init__(self, name) -> None:
-        self.name = name
-        self.users = []
+    def __init__(self) -> None:
+        self.users = {}
+        self.books_reviewed = {}
+
+    def 
 
         
