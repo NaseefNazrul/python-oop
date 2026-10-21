@@ -16,7 +16,7 @@
 # This will contain all the information of the user
 # First Name
 # Last Name
-# Date of Birt
+# Date of Birth
 # email - protected
 # password - private
 # List of books they reviewed
@@ -37,19 +37,54 @@ class User:
         self.__password = password
         self.reviews = {}
 
-    def change_pass(self, curr_pass, new_pass):
+    @property
+    def password(self):
+        raise AttributeError("Cannot access the password")
+    
+    def change_password(self, curr_pass, new_pass):
         if curr_pass == self.__password:
             self.__password = new_pass
-            print("New password has been allocated")
+            print("Password changed successfully")
         else:
             print("Wrong password")
 
-    def change_email(self, new_email):
+    @property
+    def email(self):
+        return self._email
+    @email.setter
+    def email(self, new_email):
         if '@' in new_email:
             self._email = new_email
             print("Email has been changed to", new_email)
         else:
             print("Incorrect email entered")
 
+
     def info(self):
+        print(f"{self.first_name} {self.last_name}")
+        print(self.dot)
+        if not self.reviews:
+            print(f"{self.first_name} has not published any reviews")
+            return
+        for book, review in self.reviews.items():
+            print(book + ": " + review)
+
+
+# ---------------------Book---------------------------
+class 
+
+
+
+
+# ------------------BookReview--------------------
+# Stores the total number of reviews 
+# Stores the list of people that gave the reviews 
+# Has the ability to post a review depending on the user 
+# Has the ability to remove a review 
+# 
+class BookReview:
+    def __init__(self, name) -> None:
+        self.name = name
+        self.users = []
+
         
